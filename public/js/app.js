@@ -1987,6 +1987,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'main-app',
@@ -38612,11 +38614,12 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container-fluid" },
     [
       _c("Navigation"),
       _vm._v(" "),
-      _c("div", { staticClass: "container pt-4" }, [_c("router-view")], 1)
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "container pt-4" }, [_c("router-view")], 1)
+      ])
     ],
     1
   )
@@ -38646,76 +38649,91 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "nav",
-    { staticClass: "navbar-expand-lg navbar-light bg-white shadow-sm" },
+    {
+      staticClass:
+        "navbar-expand-lg navbar-light bg-primary shadow-sm navbar-dark"
+    },
     [
-      _c("div", { staticClass: "contender" }, [
-        _c(
-          "div",
-          { staticClass: "navbar-header  float-left" },
-          [
-            _c(
-              "router-link",
-              { staticClass: "navbar-brand", attrs: { to: { name: "home" } } },
-              [
-                _vm._v("Laravel"),
-                _c(
-                  "sup",
-                  { staticClass: "text-white badge-dark px-1 rounded-circle" },
-                  [_vm._v("8")]
-                ),
-                _vm._v("&\n                VueJs\n            ")
-              ]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "nav navbar-nav float-right" },
-          [
-            !_vm.currentUser
-              ? _c(
-                  "router-link",
-                  {
-                    staticClass:
-                      "nav-item nav-link bg-secondary text-white rounded-sm",
-                    attrs: { to: { name: "login" } }
-                  },
-                  [_vm._v("Login\n            ")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.currentUser
-              ? _c(
-                  "router-link",
-                  {
-                    staticClass: "nav-item nav-link",
-                    attrs: { to: { name: "dashboard" } }
-                  },
-                  [_vm._v("Dashboard\n            ")]
-                )
-              : _vm._e(),
-            _vm._v(" "),
-            _vm.currentUser
-              ? _c(
-                  "a",
-                  {
-                    staticClass: "nav-item nav-link",
-                    on: {
-                      click: function($event) {
-                        $event.preventDefault()
-                        return _vm.logout($event)
+      _c(
+        "div",
+        {
+          staticClass:
+            "contender d-flex justify-content-between align-items-center px-5 py-2"
+        },
+        [
+          _c(
+            "div",
+            { staticClass: "nav navbar-header  " },
+            [
+              _c(
+                "router-link",
+                {
+                  staticClass: "navbar-brand",
+                  attrs: { to: { name: "home" } }
+                },
+                [
+                  _vm._v("Laravel"),
+                  _c(
+                    "sup",
+                    {
+                      staticClass: "text-white badge-dark px-1 rounded-circle"
+                    },
+                    [_vm._v("8")]
+                  ),
+                  _vm._v("&\n                VueJs\n            ")
+                ]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "nav navbar-nav " },
+            [
+              !_vm.currentUser
+                ? _c(
+                    "router-link",
+                    {
+                      staticClass:
+                        "nav-item nav-link bg-secondary text-white rounded-sm",
+                      attrs: { to: { name: "login" } }
+                    },
+                    [_vm._v("Login\n            ")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.currentUser
+                ? _c(
+                    "router-link",
+                    {
+                      staticClass: "nav-item nav-link",
+                      attrs: { to: { name: "dashboard" } }
+                    },
+                    [_vm._v("Dashboard\n            ")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.currentUser
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "nav-item nav-link",
+                      on: {
+                        click: function($event) {
+                          $event.preventDefault()
+                          return _vm.logout($event)
+                        }
                       }
-                    }
-                  },
-                  [_vm._v("Logout")]
-                )
-              : _vm._e()
-          ],
-          1
-        )
-      ])
+                    },
+                    [_vm._v("Logout")]
+                  )
+                : _vm._e()
+            ],
+            1
+          )
+        ]
+      )
     ]
   )
 }

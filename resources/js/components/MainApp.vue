@@ -1,8 +1,10 @@
 <template>
-    <div class="container-fluid">
+    <div>
         <Navigation/>
-        <div class="container pt-4">
-            <router-view/>
+        <div class="container-fluid">
+            <div class="container pt-4">
+                <router-view/>
+            </div>
         </div>
     </div>
 </template>
