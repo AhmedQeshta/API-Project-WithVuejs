@@ -4,7 +4,7 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import MainApp from "./components/MainApp";
 import {routes} from './routes';
-import {storeData} from './store';
+import storeData from './store';
 
 Vue.use(VueRouter);
 Vue.use(Vuex);
