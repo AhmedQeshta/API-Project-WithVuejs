@@ -1,9 +1,9 @@
 export function login(credentials) {
 
     return new Promise((res, rej) => {
-        axios.post('api/login', credentials)
+        axios.post('/api/login', credentials)
             .then(response => {
-                res(response);
+                res(response.data);
             })
             .catch(err => {
                 rej('Wrong E-mail or Password');

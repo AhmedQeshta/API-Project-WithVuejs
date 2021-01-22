@@ -1,14 +1,20 @@
-import {getLoggedInUser} from './auth.js';
+import VuexPersistence from 'vuex-persist'
 
-const user = getLoggedInUser();
-const storeData = {
-    state: {
-        currentUser: user,
-        isLoggedIn: !!user,
-        auth_error: null,
-        reg_error: null,
-        registeredUser: null,
-    },
+import {getLoggedInUser} from "./auth";
+
+// const user = getLoggedInUser();
+
+
+const state = {
+    currentUser: getLoggedInUser(),
+    isLoggedIn: !!getLoggedInUser(),
+    auth_error: null,
+    reg_error: null,
+    registeredUser: null,
+};
+export default {
+    state,
+    plugins: [new VuexPersistence().plugin],
     getters: {
         isLoggedIn(state) {
             return state.isLoggedIn;
@@ -31,7 +37,7 @@ const storeData = {
             state.auth_error = null;
             state.isLoggedIn = true;
             state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
-            localStorage.setItem("user", JSON.stringify(this.state.user));
+            localStorage.setItem("user", JSON.stringify(this.state.currentUser));
         },
         loginFailed(state, payload) {
             state.auth_error = payload.error;
@@ -56,4 +62,3 @@ const storeData = {
     }
 }
 
-export default storeData;

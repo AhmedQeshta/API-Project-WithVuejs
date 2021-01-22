@@ -56,7 +56,7 @@ export default {
             this.$store.dispatch('login');
             login(this.$data.form).then(res => {
                 this.$store.commit('loginSuccess', res);
-                this.$router.push('/dashboard');
+                this.$router.push({path: '/dashboard'});
             }).catch(err => {
                 this.$store.commit('loginFailed');
             })
